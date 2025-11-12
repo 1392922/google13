@@ -106,7 +106,7 @@ img {
     margin-bottom: 2rem;
     border-bottom: 3px solid #ddd;
     padding-bottom: 10px;
-    display: inline-block; /* 讓底線只跟著文字 */
+    display: inline-block; /* 讓讓底線只跟著文字 */
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -296,7 +296,6 @@ img {
     background-color: #a30000;
 }
 
-
 /* --- 7. 頁腳 (Footer) --- */
 .site-footer {
     background-color: #222;
@@ -304,4 +303,20 @@ img {
     text-align: center;
     padding: 2rem 0;
     margin-top: 2rem;
+}
+
+/* --- 8. 響應式設計 (Responsive) --- */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .splash-content h1 {
+        font-size: 2rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr; /* 手機版單欄 */
+    }
 }
