@@ -1,322 +1,38 @@
-/* --- 全局重置與基本設定 --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* 原有樣式保持不變，新增以下 */
 
-body {
-    font-family: 'Noto Sans TC', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* --- 1. 導航列 (Navbar) --- */
-/* 靈感來自 CNN/DW 的深色頂部欄 */
-.navbar {
-    background-color: #222;
-    color: #fff;
-    padding: 1rem 0;
-    position: sticky; /* 讓導航列固定在頂部 */
-    top: 0;
-    z-index: 1000;
-    border-bottom: 3px solid #db0000; /* 參考 CNN 的紅色點綴 */
-}
-
-.navbar nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* 讓選單居中 */
-    flex-wrap: wrap;
-}
-
-.navbar nav ul li {
-    margin: 0.5rem 1rem;
-}
-
-.navbar nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    padding-bottom: 5px;
-    transition: color 0.3s, border-bottom 0.3s;
-}
-
-.navbar nav ul li a:hover {
-    color: #ddd;
-    border-bottom: 2px solid #db0000;
-}
-
-/* --- 2. 啟動畫面 (Splash Screen) --- */
-.splash-screen {
-    /* 關鍵：設定高度為 100vh (100% 視窗高度) */
-    height: 100vh;
-    
-    /* 使用 Flexbox 來完美居中 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    /* 背景 (可選：加入背景圖) */
-    background-color: #1a1a1a;
-    color: #fff;
-    /* 範例背景圖 (若要使用請取消註解) */
-    /*
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('your-image-url.jpg');
-    background-size: cover;
-    background-position: center;
-    */
-}
-
-.splash-content h1 {
-    font-size: 3rem; /* 標題字體 */
-    font-weight: 700;
-    letter-spacing: 2px;
-    /* 增加一點陰影 */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* --- 3. 新聞內容區 (News Section) --- */
-.news-section {
-    padding: 3rem 0;
-}
-
-.news-section.alt-bg {
-    background-color: #f0f0f0; /* 交錯的背景色 */
-}
-
-.news-section h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid #ddd;
-    padding-bottom: 10px;
-    display: inline-block; /* 讓讓底線只跟著文字 */
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.section-description {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 2.5rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- 4. 新聞卡片 (News Card) - CNN/DW 風格 --- */
-.news-grid {
-    display: grid;
-    /* 響應式網格：自動調整欄位 */
-    /* 最小 300px，最大 1fr (均分) */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.news-card {
+/* 全螢幕新聞內文頁 */
+.full-screen-article {
     background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    overflow: hidden; /* 讓圖片圓角生效 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.news-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* 確保圖片比例不失真 */
-    display: block;
-    background-color: #eee; /* 圖片載入前的底色 */
-}
-
-.card-content {
-    padding: 1.5rem;
-}
-
-.card-content h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.card-content p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-.read-more {
-    color: #db0000; /* 紅色連結 */
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.read-more:hover {
-    text-decoration: underline;
-}
-
-.analysis-link {
-    display: block;
-    margin-top: 10px;
-    color: #005a9c; /* 不同的連結顏色 */
-    font-weight: 700;
-}
-
-/* --- 5. 獨立頁面 (關於, 投稿) --- */
-.page-content {
-    padding: 3rem 0;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    min-height: 60vh;
-}
-
-.page-content h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-}
-
-.about-section {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px dashed #ccc;
-}
-.about-section:last-child {
-    border-bottom: none;
-}
-
-.about-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #db0000;
-}
-
-/* --- 6. 投稿表單 (Submit Form) --- */
-.submission-process {
-    background-color: #fdfae5;
-    border: 1px solid #f0e6c1;
-    border-radius: 5px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-}
-.submission-process h3 {
-    color: #c09853;
-    margin-bottom: 1rem;
-}
-.submission-process ol {
-    margin-left: 1.5rem;
-}
-.important-note {
-    margin-top: 1rem;
-    font-weight: 700;
-    color: #c09853;
-}
-
-#submission-form {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-.form-group textarea {
-    resize: vertical; /* 允許垂直調整大小 */
-}
-
-.form-group input[type="checkbox"] {
-    width: auto;
-    margin-right: 10px;
-}
-/* 讓 checkbox 和 label 同一行 */
-.form-group:has(input[type="checkbox"]) {
-    flex-direction: row;
-    align-items: center;
-}
-
-.cta-button {
-    background-color: #db0000;
-    color: #fff;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: fit-content;
-    justify-self: start;
-}
-
-.cta-button:hover {
-    background-color: #a30000;
-}
-
-/* --- 7. 頁腳 (Footer) --- */
-.site-footer {
-    background-color: #222;
-    color: #aaa;
-    text-align: center;
+.article-content {
     padding: 2rem 0;
-    margin-top: 2rem;
+    min-height: calc(100vh - 150px); /* 全螢幕調整 */
 }
 
-/* --- 8. 響應式設計 (Responsive) --- */
-@media (max-width: 768px) {
-    .navbar nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
+.article-title {
+    font-size: 3rem; /* 斗大標題 */
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #db0000; /* 紅色強調，如 CNN */
+}
 
-    .splash-content h1 {
-        font-size: 2rem;
-    }
+.article-meta {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
 
-    .news-grid {
-        grid-template-columns: 1fr; /* 手機版單欄 */
-    }
+.article-image {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    display: block;
+}
+
+.article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
