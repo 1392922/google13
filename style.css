@@ -1,38 +1,311 @@
-/* 原有樣式保持不變，新增以下 */
-
-/* 全螢幕新聞內文頁 */
-.full-screen-article {
-    background-color: #fff;
+/* --- 全局重置與基本設定 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.article-content {
-    padding: 2rem 0;
-    min-height: calc(100vh - 150px); /* 全螢幕調整 */
+html {
+    /* 點擊錨點時平滑滾動 (優化) */
+    scroll-behavior: smooth;
 }
 
-.article-title {
-    font-size: 3rem; /* 斗大標題 */
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #db0000; /* 紅色強調，如 CNN */
+body {
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
-.article-meta {
-    text-align: center;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- 1. 導航列 (Navbar) --- */
+.navbar {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* 確保在最上層 */
+    border-bottom: 3px solid #db0000;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar nav ul li {
+    margin: 0.5rem 1rem;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
     font-size: 1rem;
-    color: #666;
+    padding-bottom: 5px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #ddd;
+    border-bottom: 2px solid #db0000;
+}
+
+/* --- 2. 啟動畫面 (Splash Screen) --- */
+.splash-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.splash-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 2rem;
 }
 
-.article-image {
-    max-width: 800px;
-    margin: 0 auto 2rem;
+.splash-enter-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #db0000;
+    border: 2px solid #db0000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.splash-enter-btn:hover {
+    background-color: transparent;
+    color: #db0000;
+}
+
+
+/* --- 3. 新聞內容區 (News Section) --- */
+.page-content-wrapper {
+    /* 這是新聞主頁的容器 */
     display: block;
 }
 
-.article-body {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
+.news-section {
+    padding: 3rem 0;
 }
+
+.news-section.alt-bg {
+    background-color: #f0f0f0;
+}
+
+.news-section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 10px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 4. 新聞卡片 (News Card) --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.news-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background-color: #eee;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: #db0000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.analysis-link {
+    display: block;
+    margin-top: 10px;
+    color: #005a9c;
+}
+
+/* --- 5. 投稿表單 (Submit Form) --- */
+/* (樣式同前，保持不變) */
+.submission-process { background-color: #fdfae5; border: 1px solid #f0e6c1; border-radius: 5px; padding: 1.5rem; margin: 2rem 0; }
+.submission-process h3 { color: #c09853; margin-bottom: 1rem; }
+.submission-process ol { margin-left: 1.5rem; }
+#submission-form { display: grid; gap: 1.5rem; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { font-weight: 700; margin-bottom: 0.5rem; }
+.form-group input[type="text"], .form-group input[type="email"], .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; font-family: inherit; }
+.form-group textarea { resize: vertical; }
+.cta-button { background-color: #db0000; color: #fff; border: none; padding: 0.8rem 1.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; width: fit-content; }
+.cta-button:hover { background-color: #a30000; }
+
+/* --- 6. 頁腳 (Footer) --- */
+.site-footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* ==================================================================
+=== 🌟 [CSS 關鍵] 全螢幕彈出頁面 (Overlay) 🌟 ===
+==================================================================
+*/
+
+/* * 1. 預設：隱藏所有彈出頁面
+ * .page-overlay 是您在 index.html 中所有隱藏頁面 (關於, 投稿, 文章1-5) 
+ * 都會用到的 class。
+ */
+.page-overlay {
+    display: none; /* 關鍵：預設為隱藏 */
+    
+    /* 關鍵：將其變為全螢幕彈出層 */
+    position: fixed; /* 固定在畫面上 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-color: #f9f9f9; /* 背景色 (不透明，蓋住下方) */
+    z-index: 2000; /* 確保在導航列 (1000) 之上 */
+    
+    /* 關鍵：如果內容太長，允許頁面內部滾動 */
+    overflow-y: auto;
+}
+
+/* * 2. 魔法：:target 選擇器
+ * 當瀏覽器的網址是 (例如) ...index.html#page-about 時，
+ * ID 為 "page-about" 的元素就會被 :target 選中。
+ * 我們命令它：顯示出來！
+ */
+.page-overlay:target {
+    display: block; /* 關鍵：顯示被選中的頁面 */
+}
+
+/* 3. 彈出頁面的「關閉按鈕」樣式 */
+.overlay-close-btn {
+    position: fixed; /* 固定在畫面的右上角 */
+    top: 20px;
+    right: 30px;
+    
+    font-size: 3rem; /* 放大 "X" */
+    font-weight: 700;
+    color: #888;
+    text-decoration: none;
+    
+    z-index: 2100; /* 確保在彈出頁面內容之上 */
+    transition: color 0.3s;
+}
+
+.overlay-close-btn:hover {
+    color: #333;
+}
+
+/* 4. 彈出頁面 (關於、投稿) 的內容排版 */
+.page-content {
+    padding: 3rem 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    min-height: 60vh;
+}
+.page-content h1 { text-align: center; margin-bottom: 2rem; font-size: 2.5rem; }
+.about-section { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px dashed #ccc; }
+.about-section:last-child { border-bottom: none; }
+.about-section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #db0000; }
+
+/* 5. 彈出頁面 (文章內文) 的排版 */
+.article-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 80px; /* 留出空間給關閉按鈕 */
+}
+.article-header { margin-bottom: 2rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 1.5rem; }
+.article-headline { font-size: 2.8rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: #111; }
+.article-meta { font-size: 0.95rem; color: #555; }
+.byline { font-weight: 700; margin-bottom: 0.5rem; }
+.dateline { color: #777; }
+.article-image { width: 100%; margin-bottom: 2rem; }
+.article-image img { width: 100%; height: auto; }
+.article-image figcaption { font-size: 0.85rem; color: #777; text-align: center; margin-top: 0.5rem; }
+.article-body { font-size: 1.1rem; line-height: 1.8; }
+.article-body p { margin-bottom: 1.5rem; }
+.article-body h2 { font-size: 1.8rem; font-weight: 700; margin: 2rem 0 1rem 0; }
