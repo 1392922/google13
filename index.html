@@ -8,121 +8,287 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header class="navbar">
         <div class="container">
             <nav>
                 <ul>
-                    <li><a href="index.html">首頁</a></li>
-                    <li><a href="about.html">關於</a></li>
-                    <li><a href="submit.html">投稿新聞</a></li>
-                    <li><a href="#entertainment">娛樂新聞</a></li>
-                    <li><a href="#conflict">非承平新聞</a></li>
-                    <li><a href="#impartial">公正新聞</a></li>
+                    <li><a href="#page-home">首頁</a></li>
+                    <li><a href="#page-about">關於</a></li>
+                    <li><a href="#page-submit">投稿新聞</a></li>
+                    <li><a href="#page-home-entertainment">娛樂新聞</a></li>
+                    <li><a href="#page-home-conflict">非承平新聞</a></li>
+                    <li><a href="#page-home-impartial">公正新聞</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main>
-        <section class="splash-screen">
+
+        <section id="page-splash" class="splash-screen">
             <div class="splash-content">
                 <h1>甯峨自救會新聞</h1>
+                <a href="#page-home" class="splash-enter-btn">進入新聞網</a>
             </div>
         </section>
-        <section id="entertainment" class="news-section">
-            <div class="container">
-                <h2>娛樂新聞</h2>
-                <div class="news-grid">
-                    <!-- 新聞卡片範例1 - 點擊進入內文頁 -->
-                    <article class="news-card">
-                        <img src="https://www.usatoday.com/gcdn/authoring/authoring-images/2023/12/16/USAT/71943024007-cat-rings-doorbell-clean.jpg?crop=1919,1079,x0,y0&width=1919&height=1079&format=pjpg&auto=webp" alt="娛樂新聞圖片">
-                        <div class="card-content">
-                            <h3>一隻貓咪學會了如何按門鈴</h3>
-                            <p>這隻聰明的貓咪在觀察主人數週後，終於掌握了這項新技能，只為了要求更多的零食...</p>
-                            <a href="entertainment1.html" class="read-more">閱讀更多</a>
-                        </div>
-                    </article>
-                    <!-- 新聞卡片範例2 -->
-                    <article class="news-card">
-                        <img src="https://www.usatoday.com/gcdn/authoring/authoring-images/2023/12/16/USAT/71943024007-cat-rings-doorbell-clean.jpg?crop=1919,1079,x0,y0&width=1919&height=1079&format=pjpg&auto=webp" alt="娛樂新聞圖片">
-                        <div class="card-content">
-                            <h3>名人搞笑失誤集錦</h3>
-                            <p>本週名人紅毯上各種尷尬瞬間，網友笑翻天...</p>
-                            <a href="entertainment2.html" class="read-more">閱讀更多</a>
-                        </div>
-                    </article>
-                    
-                    <!-- 【新增新聞卡片模板】複製以下區塊到這裡，修改 h3/p/img src/a href（href 改成您的新內文檔名.html），即可新增新聞 -->
-                    <!-- 
-                    <article class="news-card">
-                        <img src="您的圖片URL" alt="新聞圖片">
-                        <div class="card-content">
-                            <h3>您的標題</h3>
-                            <p>您的簡述...</p>
-                            <a href="您的內文檔名.html" class="read-more">閱讀更多</a>
-                        </div>
-                    </article>
-                    -->
+
+        <div id="page-home" class="page-content-wrapper">
+            <section id="page-home-entertainment" class="news-section">
+                <div class="container">
+                    <h2>娛樂新聞</h2>
+                    <div class="news-grid">
+                        <article class="news-card">
+                            <img src="https://via.placeholder.com/400x225.png?text=搞笑圖片1" alt="娛樂新聞圖片">
+                            <div class="card-content">
+                                <h3>一隻貓咪學會了如何按門鈴</h3>
+                                <p>這隻聰明的貓咪在觀察主人數週後...</p>
+                                <a href="#article-1" class="read-more">閱讀更多</a>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <img src="https://via.placeholder.com/400x225.png?text=搞笑圖片2" alt="娛樂新聞圖片">
+                            <div class="card-content">
+                                <h3>報導：一場笑話馬拉松比賽持續 48 小時</h3>
+                                <p>參賽者被要求連續講笑話，直到只剩一人站著...</p>
+                                <a href="#article-5" class="read-more">閱讀更多</a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="conflict" class="news-section alt-bg">
-            <div class="container">
-                <h2>非承平新聞</h2>
-                <div class="news-grid">
-                    <article class="news-card">
-                        <img src="https://ca-times.brightspotcdn.com/dims4/default/d78909e/2147483647/strip/true/crop/2048x1232+0+0/resize/1200x722!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6b%2F35%2F45a00c00e33859c54383a07e8999%2Fla-fg-quake-jolts-ecuador-pictures-20160416-020" alt="非承平新聞圖片">
-                        <div class="card-content">
-                            <h3>X地區發生強烈地震</h3>
-                            <p>當地時間凌晨，X地區發生規模 7.0 地震，目前救援隊伍已緊急出動...</p>
-                            <a href="conflict1.html" class="read-more">閱讀更多</a>
-                        </div>
-                    </article>
-                    <article class="news-card">
-                        <img src="https://www.cna.org/reports/2010/sino%20soviet.jpg" alt="非承平新聞圖片">
-                        <div class="card-content">
-                            <h3>邊境衝突持續升溫</h3>
-                            <p>目擊者稱，雙方在邊境線附近發生交火，國際社會呼籲雙方保持冷靜...</p>
-                            <a href="conflict2.html" class="read-more">閱讀更多</a>
-                        </div>
-                    </article>
-                    <!-- 用上述模板新增 -->
+            </section>
+
+            <section id="page-home-conflict" class="news-section alt-bg">
+                <div class="container">
+                    <h2>非承平新聞</h2>
+                    <div class="news-grid">
+                        <article class="news-card">
+                            <img src="https://via.placeholder.com/400x225.png?text=災難報導" alt="非承平新聞圖片">
+                            <div class="card-content">
+                                <h3>X地區發生強烈地震</h3>
+                                <p>當地時間凌晨，X地區發生規模 7.0 地震...</p>
+                                <a href="#article-2" class="read-more">閱讀更多</a>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <img src="https://via.placeholder.com/400x225.png?text=戰爭報導" alt="非承平新聞圖片">
+                            <div class="card-content">
+                                <h3>邊境衝突持續升溫</h3>
+                                <p>目擊者稱，雙方在邊境線附近發生交火...</p>
+                                <a href="#article-3" class="read-more">閱讀更多</a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="impartial" class="news-section">
-            <div class="container">
-                <h2>公正新聞</h2>
-                <p class="section-description">
-                    本區新聞旨在完全透明。點擊「分析報告」將可查看我們的文獻來源、數據參酌及嚴謹的分析流程。
-                </p>
-                <div class="news-grid">
-                    <article class="news-card">
-                        <img src="https://www.macrotrends.net/assets/images/thumbnails/mt/2621-1563382276.png" alt="公正新聞圖片">
-                        <div class="card-content">
-                            <h3>最新經濟數據分析</h3>
-                            <p>本季 GDP 增長 1.5%，數據顯示服務業是主要驅動力。然而，製造業 PMI 指數略微下降...</p>
-                            <a href="impartial1.html" class="read-more">閱讀更多</a>
-                            <a href="#" class="read-more analysis-link">查看分析報告</a>
-                        </div>
-                    </article>
-                    <article class="news-card">
-                        <img src="https://www.macrotrends.net/assets/images/thumbnails/mt/2621-1563382276.png" alt="公正新聞圖片">
-                        <div class="card-content">
-                            <h3>全球貿易趨勢報告</h3>
-                            <p>基於 IMF 和 WTO 數據，分析中美貿易摩擦的長期影響...</p>
-                            <a href="impartial2.html" class="read-more">閱讀更多</a>
-                            <a href="#" class="read-more analysis-link">查看分析報告</a>
-                        </div>
-                    </article>
-                    <!-- 用上述模板新增 -->
+            </section>
+
+            <section id="page-home-impartial" class="news-section">
+                <div class="container">
+                    <h2>公正新聞</h2>
+                    <p class="section-description">
+                        本區新聞旨在完全透明。點擊「分析報告」將可查看我們的文獻來源、數據參酌及嚴謹的分析流程。
+                    </p>
+                    <div class="news-grid">
+                        <article class="news-card">
+                            <img src="https://via.placeholder.com/400x225.png?text=公正報導" alt="公正新聞圖片">
+                            <div class="card-content">
+                                <h3>最新經濟數據分析</h3>
+                                <p>本季 GDP 增長 1.5%，數據顯示服務業是主要驅動力...</p>
+                                <a href="#article-4" class="read-more">閱讀更多</a>
+                                <a href="#analysis-report-4" class="read-more analysis-link">查看分析報告</a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
+
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2025 甯峨自救會新聞. 保留一切權利。</p>
         </div>
     </footer>
+
+
+    <div id="page-about" class="page-overlay">
+        <a href="#" class="overlay-close-btn">&times;</a>
+        <div class="container page-content">
+            <h1>關於 甯峨自救會新聞</h1>
+            <section class="about-section">
+                <h2>新聞網之歷史</h2>
+                <p>（您可以在這裡填寫您新聞網的創立故事和發展歷程...）</p>
+            </section>
+            <section class="about-section">
+                <h2>信念</h2>
+                <p>（您可以在這裡闡述您新聞網的核心價值觀與編輯準則，例如您提到的「絕對客觀立場」...）</p>
+            </section>
+            <section class="about-section">
+                <h2>現任領導部長</h2>
+                <ul>
+                    <li><strong>總編輯：</strong> [部長姓名]</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <div id="page-submit" class="page-overlay">
+        <a href="#" class="overlay-close-btn">&times;</a>
+        <div class="container page-content">
+            <h1>投稿新聞</h1>
+            <p>我們歡迎民眾投稿您所觀察到的事件或個人意見。所有投稿將經過嚴謹且保密的審核流程。</p>
+            <div class="submission-process">
+                <h3>投稿與三階段確認流程</h3>
+                <ol>
+                    <li><strong>第一階段 (提交)：</strong> 您透過下方表單提交內容。</li>
+                    <li><strong>第二階段 (驗證)：</strong> 我們的編輯將會與您聯繫，進行初步事實核查。</li>
+                    <li><strong>第三階段 (發布)：</strong> 內容通過審核後發布。</li>
+                </ol>
+            </div>
+            <form id="submission-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="email">電子郵件 (用於第二階段確認，將保密)</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">新聞標題</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">新聞內容 / 意見</label>
+                    <textarea id="content" name="content" rows="10" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">提交 (第一階段)</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="article-1" class="page-overlay article-page">
+        <a href="#" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header">
+                <h1 class="article-headline">一隻貓咪學會了如何按門鈴</h1>
+                <div class="article-meta">
+                    <div class="byline"><strong>記者：</strong> 寵物通訊員 / <strong>編輯：</strong> 王小明</div>
+                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月10日 (2025年11月10日)</div>
+                </div>
+            </header>
+            <figure class="article-image">
+                <img src="https://via.placeholder.com/800x450.png?text=聰明的貓咪" alt="貓咪按門鈴">
+                <figcaption>圖為示意圖，非當事貓。</figcaption>
+            </figure>
+            <article class="article-body">
+                <p>這隻聰明的貓咪在觀察主人數週後，終於掌握了這項新技能，只為了要求更多的零食。據主人表示，這隻名為「Momo」的貓咪，現在每天凌晨三點都會準時按門鈴叫醒全家人。</p>
+                <p>主人表示：「我一開始以為是送報紙的，沒想到是牠。我現在有點後悔教牠了。」</p>
+            </article>
+        </div>
+    </div>
+
+    <div id="article-2" class="page-overlay article-page">
+        <a href="#" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header">
+                <h1 class="article-headline">X地區發生強烈地震</h1>
+                <div class="article-meta">
+                    <div class="byline"><strong>記者：</strong> 張大千 / <strong>編輯：</strong> 李志成</div>
+                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月11日 (2025年11月11日)</div>
+                </div>
+            </header>
+            <figure class="article-image">
+                <img src="https://via.placeholder.com/800x450.png?text=災難報導" alt="地震">
+                <figcaption>救援行動正在進行中。</figcaption>
+            </figure>
+            <article class="article-body">
+                <p>當地時間凌晨，X地區發生規模 7.0 地震，目前救援隊伍已緊急出動。據報導，震源深度僅 10 公里，屬於淺層地震，已造成部分建築物倒塌。</p>
+                <p>政府已成立緊急應變中心，並呼籲民眾注意後續餘震，遠離危險建築物。</p>
+            </article>
+        </div>
+    </div>
+
+    <div id="article-3" class="page-overlay article-page">
+        <a href="#" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header">
+                <h1 class="article-headline">邊境衝突持續升溫</h1>
+                <div class="article-meta">
+                    <div class="byline"><strong>記者：</strong> 國際中心 / <strong>編輯：</strong> 王小明</div>
+                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月11日 (2025年11月11日)</div>
+                </div>
+            </header>
+            <figure class="article-image">
+                <img src="https://via.placeholder.com/800x450.png?text=戰爭報導" alt="衝突">
+                <figcaption>聯合國已呼籲雙方克制。</figcaption>
+            </figure>
+            <article class="article-body">
+                <p>目擊者稱，雙方在邊境線附近發生交火，國際社會呼籲雙方保持冷靜。此次衝突是近十年來最嚴重的一次，起因於長期的領土爭議。</p>
+                <p>分析人士擔心，如果局勢無法得到控制，可能引發更大規模的區域戰爭。</p>
+            </article>
+        </div>
+    </div>
+
+    <div id="article-4" class="page-overlay article-page">
+        <a href="#" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header">
+                <h1 class="article-headline">最新經濟數據分析</h1>
+                <div class="article-meta">
+                    <div class="byline"><strong>記者：</strong> [保留] / <strong>編輯：</strong> 甯峨分析部</div>
+                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月12日 (2025年11月12日)</div>
+                </div>
+            </header>
+            <figure class="article-image">
+                <img src="https://via.placeholder.com/800x450.png?text=公正報導" alt="經濟">
+                <figcaption>數據來源：財政部門</figcaption>
+            </figure>
+            <article class="article-body">
+                <p>本季 GDP 增長 1.5%，數據顯示服務業是主要驅動力。然而，製造業 PMI 指數略微下降。</p>
+                <p>（文獻、來源、參酌及分析之嚴謹流程已發布於分析報告連結中，本篇僅為摘要。）</p>
+            </article>
+        </div>
+    </div>
+
+    <div id="article-5" class="page-overlay article-page">
+        <a href="#" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header">
+                <h1 class="article-headline">報導：一場笑話馬拉松比賽持續 48 小時</h1>
+                <div class="article-meta">
+                    <div class="byline"><strong>記者：</strong> 幽默專線 / <strong>編輯：</strong> 李志成</div>
+                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月09日 (2025年11月09日)</div>
+                </div>
+            </header>
+            <figure class="article-image">
+                <img src="https://via.placeholder.com/800x450.png?text=搞笑圖片2" alt="笑話比賽">
+                <figcaption>獲勝者精疲力盡。</figcaption>
+            </figure>
+            <article class="article-body">
+                <p>參賽者被要求連續講笑話，直到只剩一人站著。冠軍表示「他已經笑不出來了」。</p>
+                <p>這場比賽在網路上引起轟動，許多人表示「光是看著就覺得累」。主辦單位表示，明年將考慮加入「憋笑挑戰」以增加難度。</p>
+            </article>
+        </div>
+    </div>
+
+    <div id="article-template" class="page-overlay article-page" style="display: none; border: 2px dashed red;">
+        <a href="#" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header">
+                <h1 class="article-headline">【請填寫您的斗大標題】</h1>
+                <div class="article-meta">
+                    <div class="byline"><strong>記者：</strong> [記者姓名] / <strong>編輯：</strong> [編輯姓名]</div>
+                    <div class="dateline"><strong>發布時間：</strong> 民國OOO年O月O日 (202X年O月O日)</div>
+                </div>
+            </header>
+            <figure class="article-image">
+                <img src="https://via.placeholder.com/800x450.png?text=請替換新聞主圖" alt="新聞範例圖片">
+                <figcaption>這裡是圖片說明文字。</figcaption>
+            </figure>
+            <article class="article-body">
+                <p>（這裡是新聞內文的第一段）請在這裡輸入您的新聞內容...</p>
+                <p>（這裡是新聞內文的第二段）...</p>
+            </article>
+        </div>
+    </div>
+
+
 </body>
 </html>
