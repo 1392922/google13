@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿新聞 - 甯峨自救會新聞</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">關於</a></li>
+                    <li><a href="submit.html">投稿新聞</a></li>
+                    <li><a href="index.html#entertainment">娛樂新聞</a></li>
+                    <li><a href="index.html#conflict">非承平新聞</a></li>
+                    <li><a href="index.html#impartial">公正新聞</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container page-content">
+            <h1>投稿新聞</h1>
+            <p>我們歡迎民眾投稿您所觀察到的事件或個人意見。所有投稿將經過嚴謹且保密的審核流程。</p>
+
+            <div class="submission-process">
+                <h3>投稿與三階段確認流程</h3>
+                <ol>
+                    <li><strong>第一階段 (提交)：</strong> 您透過下方表單提交內容。系統將加密您的資料。</li>
+                    <li><strong>第二階段 (驗證)：</strong> 我們的編輯將會（透過您留下的聯絡方式）與您聯繫，進行初步事實核查與身份確認（可匿名）。</li>
+                    <li><strong>第三階段 (發布)：</strong> 內容通過審核後，將會進行編輯與排版，並在確認後發布。</li>
+                </ol>
+                <p class="important-note">
+                    <strong>重要提示：</strong> 您所要求的「保密三階段確認」是一個複雜的安全功能。以下的表單僅為視覺展示。
+                    <br>
+                    <strong>(要實現此功能，您未來需要學習後端開發，例如使用資料庫加密和安全的驗證系統，僅 HTML 和 CSS 無法做到。)</strong>
+                </p>
+            </div>
+
+            <form id="submission-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">您的稱呼 (可選)</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">電子郵件 (用於第二階段確認，將保密)</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">新聞標題</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">新聞內容 / 意見</label>
+                    <textarea id="content" name="content" rows="10" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="evidence">相關證據 / 文件 (可選)</label>
+                    <input type="file" id="evidence" name="evidence">
+                </div>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">我已閱讀並同意三階段確認流程。</label>
+                </div>
+
+                <button type="submit" class="cta-button">提交 (第一階段)</button>
+            </form>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 甯峨自救會新聞. 保留一切權利。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
