@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header class="navbar">
         <div class="container">
             <nav>
@@ -23,12 +22,10 @@
             </nav>
         </div>
     </header>
-
     <main>
         <div class="container page-content">
             <h1>投稿新聞</h1>
             <p>我們歡迎民眾投稿您所觀察到的事件或個人意見。所有投稿將經過嚴謹且保密的審核流程。</p>
-
             <div class="submission-process">
                 <h3>投稿與三階段確認流程</h3>
                 <ol>
@@ -42,49 +39,39 @@
                     <strong>(要實現此功能，您未來需要學習後端開發，例如使用資料庫加密和安全的驗證系統，僅 HTML 和 CSS 無法做到。)</strong>
                 </p>
             </div>
-
             <form id="submission-form" action="#" method="POST">
                 <div class="form-group">
                     <label for="name">您的稱呼 (可選)</label>
                     <input type="text" id="name" name="name">
                 </div>
-
                 <div class="form-group">
                     <label for="email">電子郵件 (用於第二階段確認，將保密)</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-
                 <div class="form-group">
                     <label for="title">新聞標題</label>
                     <input type="text" id="title" name="title" required>
                 </div>
-
                 <div class="form-group">
                     <label for="content">新聞內容 / 意見</label>
                     <textarea id="content" name="content" rows="10" required></textarea>
                 </div>
-
                 <div class="form-group">
                     <label for="evidence">相關證據 / 文件 (可選)</label>
                     <input type="file" id="evidence" name="evidence">
                 </div>
-                
                 <div class="form-group">
                     <input type="checkbox" id="agree" name="agree" required>
                     <label for="agree">我已閱讀並同意三階段確認流程。</label>
                 </div>
-
                 <button type="submit" class="cta-button">提交 (第一階段)</button>
             </form>
-
         </div>
     </main>
-
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2025 甯峨自救會新聞. 保留一切權利。</p>
         </div>
     </footer>
-
 </body>
 </html>
