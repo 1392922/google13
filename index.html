@@ -135,19 +135,33 @@
                     <li><strong>第二階段 (驗證)：</strong> 我們的編輯將會（透過 `mailto:` 功能）收到您的郵件並與您聯繫，進行初步事實核查。</li>
                     <li><strong>第三階段 (發布)：</strong> 內容通過審核後發布。</li>
                 </ol>
+
                 <p class="important-note">
-                    <strong>重要提示：</strong> 本網站為靜態網站，下方的表單將使用 `mailto:` 協定。這會**調用您電腦中預設的電子郵件軟體** (如 Outlook, Apple Mail) 來準備一封郵件，您必須**手動按下「傳送」** 才能完成投稿。
+                    <strong>🌟 [重要] 如何啟用「直接書送」功能：</strong>
+                    <br>
+                    本表單已升級為使用 **Formspree** (一個安全的第三方「郵差」服務) 來處理，以實現您要的「直接書送」與「安全連結」。
+                    <br><br>
+                    <strong>您必須完成以下步驟來啟動它：</strong>
+                    <ol style="margin-left: 20px; font-weight: normal;">
+                        <li>前往 <a href="https://formspree.io/" target="_blank"><strong>formspree.io</strong></a> 網站，註冊一個免費帳戶。</li>
+                        <li>建立一個 "New Form"，在 "Receiving email" 處填入您的信箱 `123456789@123456789`。</li>
+                        <li>Formspree 會提供給您一個**專屬 URL** (例如 `https://formspree.io/f/mabcdefg`)。</li>
+                        <li>打開您的 `index.html` 檔案，將下方 `action` 屬性中的 `YOUR_UNIQUE_ID_HERE` 替換為您剛剛拿到的**專屬 URL**。</li>
+                    </ol>
                 </p>
             </div>
             
-            <form id="submission-form" action="mailto:123456@jhkhjffs.com" method="POST" enctype="text/plain">
+            <form id="submission-form" 
+                  action="https://formspree.io/f/YOUR_UNIQUE_ID_HERE" 
+                  method="POST">
+                  
                 <div class="form-group">
                     <label for="name">您的稱呼 (可選)</label>
                     <input type="text" id="name" name="name">
                 </div>
                 <div class="form-group">
                     <label for="email_contact">您的電子郵件 (用於第二階段確認，將保密)</label>
-                    <input type="email" id="email_contact" name="email_contact" required>
+                    <input type="email" id="email_contact" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="title">新聞標題</label>
@@ -494,7 +508,6 @@
             // 12. 最後，"跳轉" 到搜尋結果頁面
             window.location.hash = '#page-search-results';
         }
-    </script>
-
+    </Goldschmiede>
 </body>
 </html>
