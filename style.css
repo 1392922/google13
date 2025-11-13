@@ -6,7 +6,6 @@
 }
 
 html {
-    /* 點擊錨點時平滑滾動 (優化) */
     scroll-behavior: smooth;
 }
 
@@ -28,6 +27,17 @@ img {
     height: auto;
 }
 
+/* === [第一點優化] ===
+ * 隱藏導航列、主內容和頁腳，
+ * 當用戶剛進入網站時 (網址沒有 # 錨點)
+ */
+body:not(:has(*:target)) .navbar,
+body:not(:has(*:target)) main,
+body:not(:has(*:target)) .site-footer {
+    display: none;
+}
+
+
 /* --- 1. 導航列 (Navbar) --- */
 .navbar {
     background-color: #222;
@@ -35,12 +45,16 @@ img {
     padding: 1rem 0;
     position: sticky;
     top: 0;
-    
-    /* === [優化 1：介面修復] ===
-     * 將 z-index 提高到 3000，確保它永遠在彈出視窗 (2000) 之上。
-     */
+    /* [優化] 確保導航列在彈出視窗(2000)之上 */
     z-index: 3000; 
     border-bottom: 3px solid #db0000;
+    
+    /* 修正: 預設 .navbar 是 <header>，display: block，要改為 flex 才能顯示選單 */
+    display: flex;
+}
+
+.navbar nav {
+    width: 100%; /* 讓 nav 撐滿 */
 }
 
 .navbar nav ul {
@@ -48,12 +62,12 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .navbar nav ul li {
     margin: 0.5rem 1rem;
 }
-
 .navbar nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -62,7 +76,6 @@ img {
     padding-bottom: 5px;
     transition: color 0.3s, border-bottom 0.3s;
 }
-
 .navbar nav ul li a:hover {
     color: #ddd;
     border-bottom: 2px solid #db0000;
@@ -70,14 +83,32 @@ img {
 
 /* --- 2. 啟動畫面 (Splash Screen) --- */
 .splash-screen {
-    height: 100vh;
-    display: flex;
+    /* === [第一點優化] === 
+     * 將啟動畫面改為固定的 "蓋子"，蓋住整個網站
+     */
+    display: flex; /* 保持內容居中 */
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #1a1a1a;
     color: #fff;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* 佔滿全螢幕 */
+    z-index: 5000; /* 確保在最最最上層 */
 }
+
+/* === [第一點優化] ===
+ * 當網址 *有* 任何 # 錨點時 (#page-home, #article-1...)
+ * 隱藏啟動畫面
+ */
+body:has(*:target) #page-splash {
+    display: none;
+}
+
 
 .splash-content h1 {
     font-size: 3rem;
@@ -107,18 +138,21 @@ img {
 
 
 /* --- 3. 新聞內容區 (News Section) --- */
+
+/* [優化] 為 sticky 導航列留出空間 */
+main {
+    padding-top: 80px; 
+}
+
 .page-content-wrapper {
     display: block;
 }
-
 .news-section {
     padding: 3rem 0;
 }
-
 .news-section.alt-bg {
     background-color: #f0f0f0;
 }
-
 .news-section h2 {
     font-size: 2.2rem;
     font-weight: 700;
@@ -131,7 +165,6 @@ img {
     left: 50%;
     transform: translateX(-50%);
 }
-
 .section-description {
     text-align: center;
     font-size: 1.1rem;
@@ -148,7 +181,6 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
-
 .news-card {
     background-color: #fff;
     border: 1px solid #e0e0e0;
@@ -157,7 +189,6 @@ img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .news-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -195,68 +226,44 @@ img {
 === 🌟 [CSS 關鍵] 全螢幕彈出頁面 (Overlay) 🌟 ===
 ==================================================================
 */
-
-/* === [優化 3：視覺動畫] === */
-/* 定義一個名為 'fadeIn' 的動畫 */
 @keyframes fadeIn {
-    from { opacity: 0; } /* 從透明開始 */
-    to { opacity: 1; }   /* 到完全不透明 */
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
-
-
-/* 1. 預設：隱藏所有彈出頁面 */
 .page-overlay {
-    display: none; /* 預設為隱藏 */
-    
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
     background-color: #f9f9f9; 
-    
-    /* 確保在 Navbar (3000) 之下，但在主頁內容之上 */
+    /* 確保在 Navbar (3000) 之下 */
     z-index: 2000; 
-    
-    overflow-y: auto; /* 允許頁面內部滾動 */
+    overflow-y: auto;
 }
-
-/* 2. 魔法：:target 選擇器 */
 .page-overlay:target {
-    display: block; /* 顯示被選中的頁面 */
-    
-    /* === [優化 3：視覺動畫] === */
-    /* 套用 'fadeIn' 動畫，持續 0.3 秒 */
+    display: block; 
     animation: fadeIn 0.3s ease-in-out;
 }
-
-/* 3. 彈出頁面的「關閉按鈕」樣式 */
 .overlay-close-btn {
     position: fixed; 
     top: 20px;
     right: 30px;
-    
     font-size: 3rem;
     font-weight: 700;
     color: #888;
     text-decoration: none;
-    
-    /* 確保它在彈出頁面 (2000) 之上，但在 Navbar (3000) 之下 */
+    /* 確保在彈出頁面 (2000) 之上 */
     z-index: 2100; 
     transition: color 0.3s;
 }
-
 .overlay-close-btn:hover {
     color: #333;
 }
-
-/* 4. 彈出頁面 (關於、投稿) 的內容排版 */
 .page-content {
     padding: 3rem 0;
-    /* === [優化 1：介面修復] ===
-     * 將 margin-top 增加到 80px，為頂部固定的 Navbar 留出空間
-     */
+    /* [優化] 為 sticky 導航列留出空間 */
     margin-top: 80px; 
     margin-bottom: 2rem;
     min-height: 60vh;
@@ -265,8 +272,6 @@ img {
 .about-section { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px dashed #ccc; }
 .about-section:last-child { border-bottom: none; }
 .about-section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #db0000; }
-
-/* 5. 彈出頁面 (文章內文) 的排版 */
 .article-container {
     max-width: 800px;
     margin: 2rem auto;
@@ -274,11 +279,7 @@ img {
     background-color: #fff;
     border: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    
-    /* === [優化 1：介面修復] ===
-     * 將 margin-top 增加到 100px (比 80px 更多一點)，
-     * 確保文章標題和 Navbar 之間有足夠的呼吸空間
-     */
+    /* [優化] 為 sticky 導航列留出空間 */
     margin-top: 100px; 
 }
 .article-header { margin-bottom: 2rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 1.5rem; }
