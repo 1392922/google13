@@ -40,15 +40,18 @@ body:not(:has(*:target)) .site-footer {
     z-index: 3000; 
     border-bottom: 3px solid #db0000;
 }
+
+/* [優化] 使用 Flexbox 讓選單和搜尋框並排 */
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap; /* 在小螢幕時允許換行 */
 }
+
 .navbar nav {
-    flex-grow: 1; 
-    min-width: 300px;
+    flex-grow: 1; /* 選單佔據主要空間 */
+    min-width: 300px; /* 最小寬度 */
 }
 .navbar nav ul {
     list-style: none;
@@ -73,16 +76,16 @@ body:not(:has(*:target)) .site-footer {
     border-bottom: 2px solid #db0000;
 }
 
-/* === [第一點優化] 搜尋框樣式 (含按鈕) === */
+/* === [第一點優化] 搜尋框樣式 === */
 .search-bar {
     display: flex;
-    margin: 0.5rem 1rem;
+    margin: 0.5rem 1rem; /* 在小螢幕換行時的間距 */
 }
 .search-bar input {
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
     border: none;
-    border-radius: 4px 0 0 4px; /* 圓角在左側 */
+    border-radius: 4px;
     background-color: #444;
     color: #fff;
     border: 1px solid #666;
@@ -96,21 +99,6 @@ body:not(:has(*:target)) .site-footer {
 }
 .search-bar input::placeholder {
     color: #aaa;
-}
-.search-bar button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 0 4px 4px 0; /* 圓角在右側 */
-    background-color: #db0000;
-    color: #fff;
-    cursor: pointer;
-    border: 1px solid #db0000;
-    transition: background-color 0.3s;
-}
-.search-bar button:hover {
-    background-color: #a30000;
 }
 
 
@@ -127,8 +115,9 @@ body:not(:has(*:target)) .site-footer {
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 5000;
+    z-index: 5000; /* 最上層 */
 }
+/* 隱藏啟動畫面 */
 body:has(*:target) #page-splash {
     display: none;
 }
@@ -156,15 +145,18 @@ body:has(*:target) #page-splash {
 
 
 /* --- 3. 主內容區 (Main Content) --- */
+/* (為 sticky 導航列留出空間) */
 main {
+    /* [優化] 因為首頁現在有內容，所以 main 需要 padding */
     padding-top: 80px; 
 }
 .page-content-wrapper {
     display: block;
+    /* [優化] 讓首頁內容有上下間距 */
     padding: 2rem 0; 
 }
 
-/* 華麗首頁樣式 */
+/* === [第四點優化] 華麗首頁樣式 === */
 .featured-story {
     background-color: #fff;
     border: 1px solid #e0e0e0;
@@ -175,7 +167,7 @@ main {
 }
 .featured-image img {
     width: 100%;
-    height: 400px;
+    height: 400px; /* 固定高度 */
     object-fit: cover;
     display: block;
 }
@@ -234,6 +226,7 @@ main {
 
 
 /* --- 4. 新聞卡片 (News Card) --- */
+/* (樣式不變) */
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -259,58 +252,11 @@ main {
 .read-more:hover { text-decoration: underline; }
 .analysis-link { display: block; margin-top: 10px; color: #005a9c; }
 
-/* 搜尋無結果的提示 */
-.search-no-results {
-    font-size: 1.2rem;
-    color: #555;
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-}
-
 /* --- 5. 投稿表單 (Submit Form) --- */
-.submission-notice {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-left: 5px solid #003366; 
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 0 5px 5px 0;
-}
-.submission-notice h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #003366;
-    margin-bottom: 0.5rem;
-}
-.submission-notice p {
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    color: #444;
-}
-.submission-notice p:last-child {
-    margin-bottom: 0;
-}
-.submission-notice .signature {
-    text-align: right;
-    font-weight: 700;
-}
-.submission-process { 
-    background-color: #fdfae5; 
-    border: 1px solid #f0e6c1; 
-    border-radius: 5px; 
-    padding: 1.5rem; 
-    margin: 2rem 0; 
-}
+/* (樣式不變) */
+.submission-process { background-color: #fdfae5; border: 1px solid #f0e6c1; border-radius: 5px; padding: 1.5rem; margin: 2rem 0; }
 .submission-process h3 { color: #c09853; margin-bottom: 1rem; }
 .submission-process ol { margin-left: 1.5rem; }
-.important-note {
-    margin-top: 1rem;
-    font-weight: 700;
-    color: #c09853;
-    padding-top: 1rem;
-    border-top: 1px dashed #f0e6c1;
-}
 #submission-form { display: grid; gap: 1.5rem; }
 .form-group { display: flex; flex-direction: column; }
 .form-group label { font-weight: 700; margin-bottom: 0.5rem; }
@@ -344,7 +290,7 @@ main {
     width: 100%;
     height: 100%;
     background-color: #f9f9f9; 
-    z-index: 2000; 
+    z-index: 2000; /* 在 Navbar (3000) 之下 */
     overflow-y: auto;
 }
 .page-overlay:target {
@@ -359,7 +305,7 @@ main {
     font-weight: 700;
     color: #888;
     text-decoration: none;
-    z-index: 2100; 
+    z-index: 2100; /* 在彈出頁面 (2000) 之上 */
     transition: color 0.3s;
 }
 .overlay-close-btn:hover {
@@ -369,7 +315,7 @@ main {
 /* 4. 彈出頁面 (關於、投稿) 的內容排版 */
 .page-content {
     padding: 3rem 0;
-    margin-top: 80px; 
+    margin-top: 80px; /* 為 sticky 導航列留出空間 */
     margin-bottom: 2rem;
     min-height: 60vh;
 }
@@ -378,7 +324,7 @@ main {
 .about-section:last-child { border-bottom: none; }
 .about-section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #db0000; }
 
-/* 5. 新聞 "分類" 頁面樣式 (包含搜尋結果頁) */
+/* 5. 新聞 "分類" 頁面樣式 */
 .news-listing-page .container {
     padding: 3rem 0;
     margin-top: 80px; 
@@ -448,77 +394,4 @@ main {
     list-style-type: square;
     margin-left: 2rem;
     color: #333;
-}
-
-/* === [第二點優化] "洽談處" 頁面樣式 === */
-.recruitment-page {
-    /* 漸層背景 */
-    background: linear-gradient(180deg, #1a1a1a 0%, #333333 50%, #1a1a1a 100%);
-    color: #fff;
-    
-    /* 確保內容可以滾動 */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* 從頂部開始 */
-    align-items: center;
-    padding-top: 15vh; /* 頂部留白 */
-    text-align: center;
-}
-.recruitment-content {
-    /* "洽談處" 標題 */
-    margin-top: 10vh; /* 與導航列的距離 */
-}
-.recruitment-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    letter-spacing: 5px;
-}
-/* 漸層後的 "框框" */
-.recruitment-box {
-    margin-top: 25vh; /* 往下滑 25% 視窗高度才出現 */
-    margin-bottom: 10vh; /* 底部留白 */
-    width: 90%;
-    max-width: 600px;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.05); /* 半透明背景 */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-.recruitment-box h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #fff;
-}
-.recruitment-box p {
-    font-size: 1.1rem;
-    color: #ccc;
-    margin-bottom: 2rem;
-}
-.recruitment-button {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #fff;
-    background-color: #db0000;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin: 0 0.5rem;
-}
-.recruitment-button:hover {
-    background-color: #a30000;
-}
-.recruitment-button.secondary {
-    background-color: transparent;
-    border: 2px solid #aaa;
-    color: #aaa;
-}
-.recruitment-button.secondary:hover {
-    background-color: #aaa;
-    color: #222;
 }
