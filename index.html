@@ -86,6 +86,14 @@
         <div class="container page-content">
             <h1>關於 甯峨自救會新聞</h1>
             <section class="about-section">
+                <h2>新聞網之歷史</h2>
+                <p>（您可以在這裡填寫...）</p>
+            </section>
+            <section class="about-section">
+                <h2>信念</h2>
+                <p>（您可以在這裡闡述...）</p>
+            </section>
+            <section class="about-section">
                 <h2>現任領導部長</h2>
                 <ul>
                     <li><strong>總編輯 (部長)：</strong> [部長姓名]</li>
@@ -102,7 +110,30 @@
         <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="container page-content">
             <h1>投稿新聞</h1>
-            <form id="submission-form" action="mailto:123456@jhkhjffs.com" method="POST" enctype="text/plain">
+
+            <div class="submission-notice">
+                <h4>咨公告：</h4>
+                <p>本新聞秉持公正客觀之精神，然係凡局勢、娛樂、事件咸定須查找資料云云，因此誠希有關注本新聞之同好，非論之差異、膚色性、種族，通可投稿以語新聞臺，本新聞台將會參酌資訊而報導，並且如欲投稿者，切莫以人身汙辱之字眼叱之，否則將不予採納，並且切莫將個人敏感個資及資訊上傳送審，以上</p>
+                <p class="signature">甯峨自救新聞台 敬上</p>
+            </div>
+
+            <div class="submission-process">
+                <h3>投稿與三階段確認流程</h3>
+                <ol>
+                    <li><strong>第一階段 (提交)：</strong> 您透過下方表單提交內容。</li>
+                    <li><strong>第二階段 (驗證)：</strong> 我們的編輯將會（透過 `mailto:` 功能）收到您的郵件並與您聯繫，進行初步事實核查。</li>
+                    <li><strong>第三階段 (發布)：</strong> 內容通過審核後發布。</li>
+                </ol>
+                <p class="important-note">
+                    <strong>重要提示：</strong> 本網站為靜態網站，下方的表單將使用 `mailto:` 協定。這會**調用您電腦中預設的電子郵件軟體** (如 Outlook, Apple Mail) 來準備一封郵件，您必須**手動按下「傳送」** 才能完成投稿。
+                </p>
+            </div>
+            
+            <form id="submission-form" 
+                  action="mailto:123456@jhkhjffs.com" 
+                  method="POST" 
+                  enctype="text/plain">
+                  
                 <div class="form-group">
                     <label for="name">您的稱呼 (可選)</label>
                     <input type="text" id="name" name="name">
@@ -199,6 +230,14 @@
                     <div class="card-content">
                         <h3>報導：一場笑話馬拉松比賽持續 48 小時</h3>
                         <p>參賽者被要求連續講笑話，直到只剩一人站著...</p>
+                        <a href="#article-5" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=搞笑圖片2" alt="娛樂新聞圖片">
+                    <div class="card-content">
+                        <h3>報導：慈禧宣布對聯軍開戰</h3>
+                        <p>這場戰爭為毫無懸念的...</p>
                         <a href="#article-5" class="read-more">閱讀更多</a>
                     </div>
                 </article>
@@ -347,6 +386,14 @@
         </div>
     </article>
 
+     <article id="article-11" class="page-overlay article-page">
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header"><h1 class="article-headline">[快訊] 嚴重之紫禁城公文 3:2</h1></header>
+            <article class="article-body"><p>（慈禧於大清遭聯軍圍攻之時，發布清帝國之公文:本國各省垣精良之師與義和團七個團全赴川，務必生擒聯軍首，嘆我大清帝國之國立曾以洋軍攻擊，務必以咸力攻之，欽此。）</p></article>
+        </div>
+    </article>
+
 
     <article id="analysis-report-4" class="page-overlay article-page">
         <a href="#page-home" class="overlay-close-btn">&times;</a>
@@ -373,7 +420,15 @@
                         <li>(範例) 國防部、軍令部之 OOO 號公開數據</li>
                     </ul>
                 </section>
-                </article>
+                <section class="analysis-section">
+                    <h3>3. 數據分析 (Data Analysis)</h3>
+                    <p>（在此處放置詳細的數據圖表、分析與解釋...）</p>
+                </section>
+                <section class="analysis-section">
+                    <h3>4. 結論 (Conclusion)</h3>
+                    <p>（基於以上分析，得出的客觀結論...）</p>
+                </section>
+            </article>
         </div>
     </article>
 
@@ -406,7 +461,6 @@
             let filter = input.value.toUpperCase();
 
             // 2. 找到 "當前" 打開的彈出頁面
-            //    我們只搜尋 "目前顯示" 的那個分類頁面
             let visiblePage = document.querySelector('.page-overlay:target');
 
             // 3. 如果沒有打開的頁面，或者打開的不是新聞列表，就什麼都不做
@@ -431,10 +485,8 @@
                     
                     // 6. 檢查 "標題" 或 "概文" 是否包含關鍵字
                     if (titleText.toUpperCase().indexOf(filter) > -1 || summaryText.toUpperCase().indexOf(filter) > -1) {
-                        // 如果包含，就顯示這張卡片
                         card.style.display = "";
                     } else {
-                        // 如果不包含，就隱藏這張卡片
                         card.style.display = "none";
                     }
                 }
