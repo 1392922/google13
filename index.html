@@ -22,18 +22,56 @@
                 <ul>
                     <li><a href="#page-home">首頁</a></li>
                     <li><a href="#page-about">關於</a></li>
-                    <li><a href="#page-submit">投稿新聞</a></li>
+                    <li><a href="#page-submit">投稿新聞</a>
+                    <li><a href="#section-live">即時</a></li>
                     <li><a href="#section-entertainment">娛樂新聞</a></li>
                     <li><a href="#section-conflict">非承平新聞</a></li>
                     <li><a href="#section-impartial">公正新聞</a></li>
                 </ul>
             </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" onkeyup="searchNews()" placeholder="搜尋目前分類新聞...">
+            </div>
         </div>
     </header>
 
     <main>
         <div id="page-home" class="page-content-wrapper">
-             </div>
+            <div class="container">
+                <section class="featured-story">
+                    <div class="featured-image">
+                        <img src="https://via.placeholder.com/800x450.png?text=甯峨自救會焦點新聞" alt="焦點新聞">
+                    </div>
+                    <div class="featured-content">
+                        <a href="#article-1" class="featured-link">
+                            <h2 class="featured-headline">一隻貓咪學會了如何按門鈴</h2>
+                            <p class="featured-summary">
+                                這隻聰明的貓咪在觀察主人數週後，終於掌握了這項新技能，只為了要求更多的零食。據主人表示...
+                            </p>
+                        </a>
+                    </div>
+                </section>
+                
+                <section class="quick-links">
+                    <a href="#section-live" class="quick-link-item">
+                        <h3>即時</h3>
+                        <p>查看最新動態</p>
+                    </a>
+                    <a href="#section-conflict" class="quick-link-item">
+                        <h3>非承平新聞</h3>
+                        <p>災難與戰爭報導</p>
+                    </a>
+                    <a href="#section-impartial" class="quick-link-item">
+                        <h3>公正新聞</h3>
+                        <p>嚴謹的分析報告</p>
+                    </a>
+                    <a href="#section-entertainment" class="quick-link-item">
+                        <h3>娛樂新聞</h3>
+                        <p>每日的輕鬆時刻</p>
+                    </a>
+                </section>
+            </div>
+        </div>
     </main>
 
     <footer class="site-footer">
@@ -48,21 +86,13 @@
         <div class="container page-content">
             <h1>關於 甯峨自救會新聞</h1>
             <section class="about-section">
-                <h2>新聞網之歷史</h2>
-                <p>（您可以在這裡填寫...）</p>
-            </section>
-            <section class="about-section">
-                <h2>信念</h2>
-                <p>（您可以在這裡闡述...）</p>
-            </section>
-            <section class="about-section">
                 <h2>現任領導部長</h2>
                 <ul>
-                    <li><strong>總編輯 (部長)：</strong> [穿山甲]</li>
-                    <li><strong>媒體總監：</strong> [無]</li>
-                    <li><strong>外事處處長：</strong> [無]</li>
-                    <li><strong>審查總監：</strong> [無]</li>
-                    <li><strong>招募總監：</strong> [無]</li>
+                    <li><strong>總編輯 (部長)：</strong> [部長姓名]</li>
+                    <li><strong>媒體總監：</strong> [總監姓名]</li>
+                    <li><strong>外事處處長：</strong> [處長姓名]</li>
+                    <li><strong>審查總監：</strong> [總監姓名]</li>
+                    <li><strong>招募總監：</strong> [總監姓名]</li>
                 </ul>
             </section>
         </div>
@@ -72,15 +102,6 @@
         <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="container page-content">
             <h1>投稿新聞</h1>
-            <p>（咨公告：本新聞秉持公正客觀之精神，然係凡局勢、娛樂、事件咸定須查找資料云云，因此誠希有關注本新聞之同好，非論之差異、膚色性、種族，通可投稿以語新聞臺，本新聞台將會參酌資訊而報導，並且如欲投稿者，切莫以人身汙辱之字眼叱之，否則將不予採納，並且切莫將個人敏感個資及資訊上傳送審，以上   甯峨自救新聞台 敬上）</p>
-            <div class="submission-process">
-                <h3>投稿與三階段確認流程</h3>
-                <ol>
-                    <li><strong>第一階段 (提交)：</strong> 您透過下方表單提交內容。</li>
-                    <li><strong>第二階段 (驗證)：</strong> 我們的編輯將會與您聯繫，進行初步事實核查。</li>
-                    <li><strong>第三階段 (發布)：</strong> 內容通過審核後發布。</li>
-                </ol>
-            </div>
             <form id="submission-form" action="mailto:123456@jhkhjffs.com" method="POST" enctype="text/plain">
                 <div class="form-group">
                     <label for="name">您的稱呼 (可選)</label>
@@ -103,11 +124,67 @@
         </div>
     </section>
 
+    <section id="section-live" class="page-overlay news-listing-page">
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
+        <div class="container">
+            <h2>即時新聞</h2>
+            <div class="news-grid">
+                
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞1" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[快訊] 央行宣布利率不變</h3>
+                        <p>央行於今日下午宣布，將維持目前利率 1.5% 不變，符合市場預期...</p>
+                        <a href="#article-6" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞2" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[即時] X 科技公司發布新款晶片</h3>
+                        <p>X 科技 CEO 剛剛在發布會上展示了其最新的 AI 晶片，宣稱效能提升 50%...</p>
+                        <a href="#article-7" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞3" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[突發] A 地區發生 5.0 地震</h3>
+                        <p>據地震中心報告，A 地區剛剛發生 5.0 地震，目前尚無災情傳出...</p>
+                        <a href="#article-8" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞4" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[快訊] 國防部發表聲明</h3>
+                        <p>針對近期海域情勢，國防部發表聲明，表示一切均在掌握之中...</p>
+                        <a href="#article-9" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞5" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[賽況] 冠軍賽比數 3:2</h3>
+                        <p>世界冠軍賽目前進入第 8 局，藍隊暫時以 3:2 領先紅隊...</p>
+                        <a href="#article-10" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
     <section id="section-entertainment" class="page-overlay news-listing-page">
         <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="container">
             <h2>娛樂新聞</h2>
             <div class="news-grid">
+                
                 <article class="news-card">
                     <img src="https://via.placeholder.com/400x225.png?text=搞笑圖片1" alt="娛樂新聞圖片">
                     <div class="card-content">
@@ -116,6 +193,7 @@
                         <a href="#article-1" class="read-more">閱讀更多</a>
                     </div>
                 </article>
+                
                 <article class="news-card">
                     <img src="https://via.placeholder.com/400x225.png?text=搞笑圖片2" alt="娛樂新聞圖片">
                     <div class="card-content">
@@ -133,6 +211,7 @@
         <div class="container">
             <h2>非承平新聞</h2>
             <div class="news-grid">
+                
                 <article class="news-card">
                     <img src="https://via.placeholder.com/400x225.png?text=災難報導" alt="非承平新聞圖片">
                     <div class="card-content">
@@ -141,6 +220,7 @@
                         <a href="#article-2" class="read-more">閱讀更多</a>
                     </div>
                 </article>
+                
                 <article class="news-card">
                     <img src="https://via.placeholder.com/400x225.png?text=戰爭報導" alt="非承平新聞圖片">
                     <div class="card-content">
@@ -158,9 +238,10 @@
         <div class="container">
             <h2>公正新聞</h2>
             <p class="section-description">
-                本區新聞旨在完全透明。點擊「分析報告」將可查看我們的文獻來源、數據參酌及嚴謹的分析流程。
+                本區新聞旨在完全透明。點擊「分析報告」將可查看我們的文獻來源...
             </p>
             <div class="news-grid">
+                
                 <article class="news-card">
                     <img src="https://via.placeholder.com/400x225.png?text=公正報導" alt="公正新聞圖片">
                     <div class="card-content">
@@ -197,66 +278,75 @@
     <article id="article-2" class="page-overlay article-page">
         <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
-            <header class="article-header">
-                <h1 class="article-headline">X地區發生強烈地震</h1>
-                <div class="article-meta">
-                    <div class="byline"><strong>記者：</strong> 張大千 / <strong>編輯：</strong> 李志成</div>
-                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月11日 (2025年11月11日)</div>
-                </div>
-            </header>
-            <article class="article-body">
-                <p>（地震內文...）</p>
-            </article>
+            <header class="article-header"><h1 class="article-headline">X地區發生強烈地震</h1></header>
+            <article class="article-body"><p>（地震內文...）</p></article>
         </div>
     </article>
 
     <article id="article-3" class="page-overlay article-page">
         <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
-            <header class="article-header">
-                <h1 class="article-headline">邊境衝突持續升溫</h1>
-                <div class="article-meta">
-                    <div class="byline"><strong>記者：</strong> 國際中心 / <strong>編輯：</strong> 王小明</div>
-                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月11日 (2025年11月11日)</div>
-                </div>
-            </header>
-            <article class="article-body">
-                <p>（衝突內文...）</p>
-            </article>
+            <header class="article-header"><h1 class="article-headline">邊境衝突持續升溫</h1></header>
+            <article class="article-body"><p>（衝突內文...）</p></article>
         </div>
     </article>
 
     <article id="article-4" class="page-overlay article-page">
         <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
-            <header class="article-header">
-                <h1 class="article-headline">最新經濟數據分析</h1>
-                <div class="article-meta">
-                    <div class="byline"><strong>記者：</strong> [保留] / <strong>編輯：</strong> 甯峨分析部</div>
-                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月12日 (2025年11月12日)</div>
-                </div>
-            </header>
-            <article class="article-body">
-                <p>（經濟分析摘要內文...）</p>
-            </article>
+            <header class="article-header"><h1 class="article-headline">最新經濟數據分析</h1></header>
+            <article class="article-body"><p>（經濟分析摘要內文...）</p></article>
         </div>
     </article>
 
     <article id="article-5" class="page-overlay article-page">
         <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
-            <header class="article-header">
-                <h1 class="article-headline">報導：一場笑話馬拉松比賽持續 48 小時</h1>
-                <div class="article-meta">
-                    <div class="byline"><strong>記者：</strong> 幽默專線 / <strong>編輯：</strong> 李志成</div>
-                    <div class="dateline"><strong>發布時間：</strong> 民國114年11月09日 (2025年11月09日)</div>
-                </div>
-            </header>
-            <article class="article-body">
-                <p>（馬拉松內文...）</p>
-            </article>
+            <header class="article-header"><h1 class="article-headline">報導：一場笑話馬拉松比賽持續 48 小時</h1></header>
+            <article class="article-body"><p>（馬拉松內文...）</p></article>
         </div>
     </article>
+
+    <article id="article-6" class="page-overlay article-page">
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header"><h1 class="article-headline">[快訊] 央行宣布利率不變</h1></header>
+            <article class="article-body"><p>（央行內文...）</p></article>
+        </div>
+    </article>
+    
+    <article id="article-7" class="page-overlay article-page">
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header"><h1 class="article-headline">[即時] X 科技公司發布新款晶片</h1></header>
+            <article class="article-body"><p>（晶片內文...）</p></article>
+        </div>
+    </article>
+
+    <article id="article-8" class="page-overlay article-page">
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header"><h1 class="article-headline">[突發] A 地區發生 5.0 地震</h1></header>
+            <article class="article-body"><p>（地震內文...）</p></article>
+        </div>
+    </article>
+
+    <article id="article-9" class="page-overlay article-page">
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header"><h1 class="article-headline">[快訊] 國防部發表聲明</h1></header>
+            <article class="article-body"><p>（國防部聲明內文...）</p></article>
+        </div>
+    </article>
+
+    <article id="article-10" class="page-overlay article-page">
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
+        <div class="article-container">
+            <header class="article-header"><h1 class="article-headline">[賽況] 冠軍賽比數 3:2</h1></header>
+            <article class="article-body"><p>（賽況內文...）</p></article>
+        </div>
+    </article>
+
 
     <article id="analysis-report-4" class="page-overlay article-page">
         <a href="#page-home" class="overlay-close-btn">&times;</a>
@@ -268,13 +358,11 @@
                     <div class="dateline"><strong>報告日期：</strong> 民國114年11月12日 (2025年11月12日)</div>
                 </div>
             </header>
-            
             <article class="article-body">
                 <section class="analysis-section">
                     <h3>1. 執行摘要 (Executive Summary)</h3>
-                    <p>（截至2025年11月，全球通貨膨脹率呈現溫和趨勢，OECD平均頭條通貨膨脹率維持在4.2%，較2024年有所放緩，但受貿易關稅、地緣政治緊張及供應鏈壓力影響，預期2025年全年平均將低於2024年，但降速較緩。美國CPI年增率約3.0%（9月數據），核心通脹穩定；歐元區10月為2.1%，接近ECB 2%目標；中國10月回升至0.2%，但整體低迷。核心驅動因素包括服務業及食品價格上漲，能源價格則提供緩衝。央行政策趨向謹慎，Fed及ECB維持高利率以錨定預期，預測2026年將進一步降至3.2%（OECD）。主要風險為美國新關稅及失業率低於預期，可能推升工資壓力。）</p>
+                    <p>（在此處簡要總結主要發現...）</p>
                 </section>
-
                 <section class="analysis-section">
                     <h3>2. 方法論與數據來源 (Methodology & Sources)</h3>
                     <p>本報告之分析參酌以下單位發布之公開文獻與數據模型：</p>
@@ -283,33 +371,9 @@
                         <li>(範例) 北大西洋公約組織 (NATO) OOO 號文件</li>
                         <li>(範例) 戰略與國際研究中心 (CSIS) OOO 計畫</li>
                         <li>(範例) 國防部、軍令部之 OOO 號公開數據</li>
-                        <li>(範例) 其他經查核之第一手資料...</li>
                     </ul>
                 </section>
-
-                <section class="analysis-section">
-                    <h3>3. 數據分析 (Data Analysis)</h3>
-                    <p>（基於最新可用數據（截至2025年11月），以下表格彙總主要經濟體的通貨膨脹率（年比年，YoY）。數據來源包括IMF、OECD、Trading Economics及官方統計機構。注意：美國10月數據因政府關機延遲，預計11月發布；歐元區及中國為10月最新。.）</p>
-                </section>
-
-                <section class="analysis-section">
-                    <h3>4. 結論 (Conclusion)</h3>
-                    <p>（通貨膨脹率主要透過消費者物價指數 (CPI) 或和諧消費者物價指數 (HICP) 計算，算法如下：
-
-基本公式：通貨膨脹率 = [(當期CPI - 基期CPI) / 基期CPI] × 100%。
-CPI 為固定商品籃 (食物、能源、服務等) 的加權平均價格指數，權重每5年更新以反映消費習慣。
-例如，美國CPI籃子包括住房 (33%)、交通 (17%)、食品 (14%) 等。
-
-核心通貨膨脹率：排除波動性高的食品及能源，算法為 CPI 總指數減去食品/能源子指數後重新加權計算。用於央行決策，避免短期噪音。
-年比年 (YoY) vs 月比月 (MoM)：YoY 為跨年比較，捕捉趨勢；MoM 為短期變化 (e.g., 美國9月MoM +0.3%)。
-季節調整：使用 X-13ARIMA-SEATS 模型 (BLS/OECD標準) 消除季節效應，如夏季能源需求。步驟：(1) 估計季節因子；(2) 應用至原始數據；(3) 每年2月更新前5年數據。
-貢獻分析：各類別貢獻 = (類別權重 × 類別變化率)。例如，歐元區服務業貢獻 = 0.44 (權重) × 3.4% (變化) ≈ +1.49 pp。
-
-此算法確保透明性，央行如Fed使用類似模型預測 (e.g., Cleveland Fed Nowcasting 模型，整合每日油價及週汽油數據)。
-結論
-2025年通貨膨脹趨勢穩定但不確定，全球平均4.2% 顯示後疫情壓力緩解，但貿易戰 (e.g., 美國關稅) 及低失業 (全球<5%) 構成上行風險，可能延緩降息。美國及歐元區接近目標，支撐軟著陸；中國低通脹警示需求不足，需刺激政策。整體而言，央行應維持數據依賴策略，預測2026年降至3.2%，但若工資螺旋加劇，則需警惕再燃。建議投資者關注核心指標，多元化資產以對沖價格波動。.）</p>
-                </section>
-            </article>
+                </article>
         </div>
     </article>
 
@@ -317,9 +381,9 @@ CPI 為固定商品籃 (食物、能源、服務等) 的加權平均價格指數
         <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
             <header class="article-header">
-                <h1 class="article-headline">【去年的一場新聞，震驚了世界】</h1>
+                <h1 class="article-headline">【請填寫您的斗大標題】</h1>
                 <div class="article-meta">
-                    <div class="byline"><strong>記者：</strong> [李丨丨] / <strong>編輯：</strong> [暫時還沒有編輯]</div>
+                    <div class="byline"><strong>記者：</strong> [記者姓名] / <strong>編輯：</strong> [編輯姓名]</div>
                     <div class="dateline"><strong>發布時間：</strong> 民國OOO年O月O日 (202X年O月O日)</div>
                 </div>
             </header>
@@ -334,6 +398,49 @@ CPI 為固定商品籃 (食物、能源、服務等) 的加權平均價格指數
         </div>
     </article>
 
+
+    <script>
+        function searchNews() {
+            // 1. 獲取用戶輸入的關鍵字，並轉換為大寫以便比對
+            let input = document.getElementById('searchInput');
+            let filter = input.value.toUpperCase();
+
+            // 2. 找到 "當前" 打開的彈出頁面
+            //    我們只搜尋 "目前顯示" 的那個分類頁面
+            let visiblePage = document.querySelector('.page-overlay:target');
+
+            // 3. 如果沒有打開的頁面，或者打開的不是新聞列表，就什麼都不做
+            if (!visiblePage || !visiblePage.classList.contains('news-listing-page')) {
+                return; 
+            }
+
+            // 4. 獲取該頁面中所有的 "新聞卡片"
+            let grid = visiblePage.querySelector('.news-grid');
+            let cards = grid.getElementsByClassName('news-card');
+
+            // 5. 循環遍歷每一張卡片
+            for (let i = 0; i < cards.length; i++) {
+                let card = cards[i];
+                // 找到卡片中的標題(h3)和概文(p)
+                let title = card.querySelector('h3');
+                let summary = card.querySelector('p');
+                
+                if (title || summary) {
+                    let titleText = title.textContent || title.innerText;
+                    let summaryText = summary.textContent || summary.innerText;
+                    
+                    // 6. 檢查 "標題" 或 "概文" 是否包含關鍵字
+                    if (titleText.toUpperCase().indexOf(filter) > -1 || summaryText.toUpperCase().indexOf(filter) > -1) {
+                        // 如果包含，就顯示這張卡片
+                        card.style.display = "";
+                    } else {
+                        // 如果不包含，就隱藏這張卡片
+                        card.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
