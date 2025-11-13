@@ -9,6 +9,13 @@
 </head>
 <body>
 
+    <section id="page-splash" class="splash-screen">
+        <div class="splash-content">
+            <h1>甯峨自救會新聞</h1>
+            <a href="#page-home" class="splash-enter-btn">進入新聞網</a>
+        </div>
+    </section>
+
     <header class="navbar">
         <div class="container">
             <nav>
@@ -25,14 +32,6 @@
     </header>
 
     <main>
-
-        <section id="page-splash" class="splash-screen">
-            <div class="splash-content">
-                <h1>甯峨自救會新聞</h1>
-                <a href="#page-home" class="splash-enter-btn">進入新聞網</a>
-            </div>
-        </section>
-
         <div id="page-home" class="page-content-wrapper">
             <section id="page-home-entertainment" class="news-section">
                 <div class="container">
@@ -112,7 +111,7 @@
 
 
     <section id="page-about" class="page-overlay">
-        <a href="#" class="overlay-close-btn">&times;</a>
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="container page-content">
             <h1>關於 甯峨自救會新聞</h1>
             <section class="about-section">
@@ -123,17 +122,22 @@
                 <h2>信念</h2>
                 <p>（您可以在這裡闡述您新聞網的核心價值觀與編輯準則，例如您提到的「絕對客觀立場」...）</p>
             </section>
+            
             <section class="about-section">
                 <h2>現任領導部長</h2>
                 <ul>
-                    <li><strong>總編輯：</strong> [部長姓名]</li>
+                    <li><strong>總編輯 (部長)：</strong> [部長姓名]</li>
+                    <li><strong>媒體總監：</strong> [總監姓名]</li>
+                    <li><strong>外事處處長：</strong> [處長姓名]</li>
+                    <li><strong>審查總監：</strong> [總監姓名]</li>
+                    <li><strong>招募總監：</strong> [總監姓名]</li>
                 </ul>
             </section>
         </div>
     </section>
 
     <section id="page-submit" class="page-overlay">
-        <a href="#" class="overlay-close-btn">&times;</a>
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="container page-content">
             <h1>投稿新聞</h1>
             <p>我們歡迎民眾投稿您所觀察到的事件或個人意見。所有投稿將經過嚴謹且保密的審核流程。</p>
@@ -145,10 +149,19 @@
                     <li><strong>第三階段 (發布)：</strong> 內容通過審核後發布。</li>
                 </ol>
             </div>
-            <form id="submission-form" action="#" method="POST">
+            
+            <form id="submission-form" 
+                  action="mailto:123456@jhkhjffs.com" 
+                  method="POST" 
+                  enctype="text/plain">
+                  
                 <div class="form-group">
-                    <label for="email">電子郵件 (用於第二階段確認，將保密)</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="name">您的稱呼 (可選)</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email_contact">您的電子郵件 (用於第二階段確認，將保密)</label>
+                    <input type="email" id="email_contact" name="email_contact" required>
                 </div>
                 <div class="form-group">
                     <label for="title">新聞標題</label>
@@ -164,7 +177,7 @@
     </section>
 
     <article id="article-1" class="page-overlay article-page">
-        <a href="#" class="overlay-close-btn">&times;</a>
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
             <header class="article-header">
                 <h1 class="article-headline">一隻貓咪學會了如何按門鈴</h1>
@@ -185,7 +198,7 @@
     </article>
 
     <article id="article-2" class="page-overlay article-page">
-        <a href="#" class="overlay-close-btn">&times;</a>
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
             <header class="article-header">
                 <h1 class="article-headline">X地區發生強烈地震</h1>
@@ -206,7 +219,7 @@
     </article>
 
     <article id="article-3" class="page-overlay article-page">
-        <a href="#" class="overlay-close-btn">&times;</a>
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
             <header class="article-header">
                 <h1 class="article-headline">邊境衝突持續升溫</h1>
@@ -227,7 +240,7 @@
     </article>
 
     <article id="article-4" class="page-overlay article-page">
-        <a href="#" class="overlay-close-btn">&times;</a>
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
             <header class="article-header">
                 <h1 class="article-headline">最新經濟數據分析</h1>
@@ -248,7 +261,7 @@
     </article>
 
     <article id="article-5" class_P="page-overlay article-page">
-        <a href="#" class="overlay-close-btn">&times;</a>
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
             <header class="article-header">
                 <h1 class="article-headline">報導：一場笑話馬拉松比賽持續 48 小時</h1>
@@ -269,7 +282,7 @@
     </article>
 
     <article id="article-template" class="page-overlay article-page" style="display: none; border: 2px dashed red;">
-        <a href="#" class="overlay-close-btn">&times;</a>
+        <a href="#page-home" class="overlay-close-btn">&times;</a>
         <div class="article-container">
             <header class="article-header">
                 <h1 class="article-headline">【請填寫您的斗大標題】</h1>
