@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即時新聞 - 甯峨自救會新聞</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">關於</a></li>
+                    <li><a href="submit.html">投稿新聞</a></li>
+                    <li><a href="live.html">即時</a></li>
+                    <li><a href="announcements.html">公告</a></li>
+                    <li><a href="entertainment.html">娛樂新聞</a></li>
+                    <li><a href="conflict.html">非承平新聞</a></li>
+                    <li><a href="impartial.html">公正新聞</a></li>
+                </ul>
+            </nav>
+            <form class="search-bar" onsubmit="handleSearch(event)">
+                <input type="text" id="searchInput" placeholder="搜尋全站新聞...">
+                <button type="submit">●</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="page-content-wrapper news-listing-page">
+        <div class="container">
+            <h2>即時新聞</h2>
+            
+            <div class="news-grid">
+                
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞1" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[快訊] 央行宣布利率不變</h3>
+                        <p>央行於今日下午宣布，將維持目前利率 1.5% 不變...</p>
+                        <a href="article-6.html" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞2" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[即時] X 科技公司發布新款晶片</h3>
+                        <p>X 科技 CEO 剛剛在發布會上展示了其最新的 AI 晶片...</p>
+                        <a href="article-7.html" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞3" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[突發] A 地區發生 5.0 地震</h3>
+                        <p>據地震中心報告，A 地區剛剛發生 5.0 地震...</p>
+                        <a href="article-8.html" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞4" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[快訊] 國防部發表聲明</h3>
+                        <p>針對近期海域情勢，國防部發表聲明...</p>
+                        <a href="article-9.html" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=即時新聞5" alt="即時新聞">
+                    <div class="card-content">
+                        <h3>[賽況] 冠軍賽比數 3:2</h3>
+                        <p>世界冠軍賽目前進入第 8 局，藍隊暫時以 3:2 領先...</p>
+                        <a href="article-10.html" class="read-more">閱讀更多</a>
+                    </div>
+                </article>
+                
+                </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 甯峨自救會新聞. 保留一切權利。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
