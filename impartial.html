@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公正新聞 - 甯峨自救會新聞</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">關於</a></li>
+                    <li><a href="submit.html">投稿新聞</a></li>
+                    <li><a href="live.html">即時</a></li>
+                    <li><a href="announcements.html">公告</a></li>
+                    <li><a href="entertainment.html">娛樂新聞</a></li>
+                    <li><a href="conflict.html">非承平新聞</a></li>
+                    <li><a href="impartial.html">公正新聞</a></li>
+                </ul>
+            </nav>
+            <form class="search-bar" onsubmit="handleSearch(event)">
+                <input type="text" id="searchInput" placeholder="搜尋全站新聞...">
+                <button type="submit">●</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="page-content-wrapper news-listing-page">
+        <div class="container">
+            <h2>公正新聞</h2>
+            <p class="section-description">
+                本區新聞旨在完全透明。點擊「分析報告」將可查看我們的文獻來源...
+            </p>
+            <div class="news-grid">
+                
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x225.png?text=公正報導" alt="公正新聞圖片">
+                    <div class="card-content">
+                        <h3>最新經濟數據分析</h3>
+                        <p>本季 GDP 增長 1.5%，數據顯示服務業是主要驅動力...</p>
+                        <a href="article-4.html" class="read-more">閱讀更多</a>
+                        <a href="analysis-report-4.html" class="read-more analysis-link">查看分析報告</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 甯峨自救會新聞. 保留一切權利。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
