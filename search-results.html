@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜尋結果 - 甯峨自救會新聞</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="search-results-page-bg">
+
+    <header class="navbar">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">關於</a></li>
+                    <li><a href="submit.html">投稿新聞</a></li>
+                    <li><a href="live.html">即時</a></li>
+                    <li><a href="announcements.html">公告</a></li>
+                    <li><a href="entertainment.html">娛樂新聞</a></li>
+                    <li><a href="conflict.html">非承平新聞</a></li>
+                    <li><a href="impartial.html">公正新聞</a></li>
+                </ul>
+            </nav>
+            <form class="search-bar" onsubmit="handleSearch(event)">
+                <input type="text" id="searchInput" placeholder="搜尋全站新聞...">
+                <button type="submit">●</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="page-content-wrapper search-results-page">
+        <div class="container">
+            <div id="search-results-content">
+                <h2>載入中...</h2>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 甯峨自救會新聞. 保留一切權利。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
