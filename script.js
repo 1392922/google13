@@ -43,7 +43,7 @@ const newsDatabase = [
         id: "article-11",
         title: "慈禧在大清的最後一場戰爭",
         summary: "本次大清帝國在經歷兩甲午戰爭後...",
-        url: "article-11.html",
+        url: "Update article-11.html",
         image: "https://via.placeholder.com/400x225.png?text=搞笑圖片2"
     },
 
