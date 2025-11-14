@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿新聞 - 甯峨自救會新聞</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">關於</a></li>
+                    <li><a href="submit.html">投稿新聞</a></li>
+                    <li><a href="live.html">即時</a></li>
+                    <li><a href="announcements.html">公告</a></li>
+                    <li><a href="entertainment.html">娛樂新聞</a></li>
+                    <li><a href="conflict.html">非承平新聞</a></li>
+                    <li><a href="impartial.html">公正新聞</a></li>
+                </ul>
+            </nav>
+            <form class="search-bar" onsubmit="handleSearch(event)">
+                <input type="text" id="searchInput" placeholder="搜尋全站新聞...">
+                <button type="submit">●</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container submission-container">
+            <h1>投稿新聞</h1>
+
+            <div class="submission-notice">
+                <h4>咨公告：</h4>
+                <p>因本新聞臺向秉持公正客觀之精神辦理報務。凡關乎時局、娛樂、社會事件諸項，咸須詳加查證，務求資訊確鑿。
+為廣納雅言，本臺誠摯希冀凡關注本報之各界同好，不論地域差異、膚色有別、種族區分，皆可踴躍來函投稿。本臺將審慎參酌所陳資訊，擇要報導。
+特此聲明：
+來稿者務必遵守公序良俗，切莫使用人身攻訐或污衊之詞。凡有悖此原則者，本臺概不予採納。
+復次，投稿時切勿夾帶個人敏感資料或隱私資訊送審，以免資料外洩。
+此啟。</p>
+                <p class="signature">甯峨自救新聞台 敬上</p>
+            </div>
+
+            <div class="submission-process">
+                <h3>投稿與三階段確認流程</h3>
+                <ol>
+                    <li><strong>第一階段 (提交)：</strong> 您透過下方表單提交內容。</li>
+                    <li><strong>第二階段 (驗證)：</strong> 您的資料將被安全傳送。我們的編輯將會收到您的郵件並與您聯繫，進行初步事實核查。</li>
+                    <li><strong>第三階段 (發布)：</strong> 內容通過審核後發布。</li>
+                </ol>
+                
+                <p class="important-note">
+                    <strong> [重要] 如何啟用「直接書送」功能：</strong>
+                    <br>
+                    本表單已升級為使用 **Formspree** (一個安全的第三方「郵差」服務)。
+                    <br><br>
+                    <strong>您必須完成以下步驟來啟動它：</strong>
+                    <ol style="margin-left: 20px; font-weight: normal;">
+                        <li>前往 <a href="https://formspree.io/" target="_blank"><strong>formspree.io</strong></a> 網站，註冊一個免費帳戶。</li>
+                        <li>建立一個 "New Form"，在 "Receiving email" 處填入您的信箱 `123456789@123456789`。</li>
+                        <li>Formspree 會提供給您一個**專屬 URL** (例如 `https://formspree.io/f/mabcdefg`)。</li>
+                        <li>打開您的 `submit.html` 檔案，將下方 `action` 屬性中的 `YOUR_UNIQUE_ID_HERE` 替換為您剛剛拿到的**專屬 URL**。</li>
+                    </ol>
+                </p>
+            </div>
+            
+            <form id="submission-form" 
+                  action="https://formspree.io/f/YOUR_UNIQUE_ID_HERE" 
+                  method="POST">
+                  
+                <div class="form-group">
+                    <label for="name">您的稱呼 (可選)</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email_contact">您的電子郵件 (用於第二階段確認，將保密)</label>
+                    <input type="email" id="email_contact" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">新聞標題</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">新聞內容 / 意見</label>
+                    <textarea id="content" name="content" rows="10" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">提交 (第一階段)</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 甯峨自救會新聞. 保留一切權利。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
